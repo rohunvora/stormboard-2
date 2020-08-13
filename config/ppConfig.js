@@ -12,8 +12,8 @@ passport.serializeUser((user, cb) => {
 // Passport "deserializeUser" is going to take the id and look that 
 // up in the database
 passport.deserializeUser((id, cb) => {
-    cb(null, user.id)
-    .catch(cb);
+    // cb(null, id)
+    // .catch(cb);
 
     db.user.findByPk(id)
     .then(user => {
@@ -21,7 +21,6 @@ passport.deserializeUser((id, cb) => {
     }).catch(cb);
 
 });
-
 
 passport.use(new localStrategy({
     usernameField: 'email',
