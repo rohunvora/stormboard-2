@@ -32,3 +32,5 @@ passport.use(new localStrategy({
     })
     .catch(cb());
 }));
+
+module.exports = passport;
