@@ -35,13 +35,13 @@ router.post('/signup', (req, res) => {
       // Email already exist
       console.log('Email already exist');
       // FLASH
-      req.flash('Email already exist. Please try again.');
+      req.flash('error','Email already exist. Please try again.');
       res.redirect('/auth/signup');
     }
   })
   .catch(error => {
     console.log('Error', error);
-    req.flash(`Error, unfortunately... ${error}`);
+    req.flash('error', `Error, unfortunately... ${error}`);
     res.redirect('/auth/signup');
   });
 });
@@ -57,7 +57,7 @@ router.post('/login', passport.authenticate('local', {
 router.get('/logout', (req, res) => {
   req.logOut();
   // FLASH MESSAGE
-  req.flash('See you soon. Logging out.');
+  req.flash('success','See you soon. Logging out.');
   res.redirect('/');
 });
 

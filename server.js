@@ -44,7 +44,8 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-  res.render('index', { alerts: req.flash() });
+  console.log(res.locals.alerts);
+  res.render('index', { alerts: res.locals.alerts });
 });
 
 app.get('/profile', isLoggedIn, (req, res) => {
@@ -59,3 +60,7 @@ const server = app.listen(port, () => {
 });
 
 module.exports = server;
+
+
+ // "username": "imjchiang",
+    // "password": 5375,
