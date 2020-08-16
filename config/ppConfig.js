@@ -40,18 +40,3 @@ passport.use(new localStrategy({
 }));
 
 module.exports = passport;
-
-// passport.serializeUser((user, done) => {
-//     // Call the callback function with the user id as an argument
-//     // done(error, id) - pass a null if no error
-//     done(null, user.id)
-// })
-// // DESERIALIZE: Reverse the process of the serialize function
-// // In other words, take a user's ID and return the full user object
-// passport.deserializeUser((id, done) => {
-//     db.user.findByPk(id)
-//     .then(user => {
-//         done(null, user)
-//     })
-//     .catch(done)
-// })

@@ -60,7 +60,3 @@ const server = app.listen(port, () => {
 });
 
 module.exports = server;
-
-
- // "username": "imjchiang",
-    // "password": 5375,
